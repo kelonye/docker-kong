@@ -3,7 +3,7 @@ MAINTAINER Marco Palladino, marco@mashape.com
 
 ENV KONG_VERSION 0.9.7
 
-RUN yum install -y wget https://cl.ly/1o0E1w293y32/download/kong-0.10.0rc1.el7.noarch.rpm && \
+RUN yum install -y wget https://cl.ly/193W0N1X2p0W/download/kong-0.10.0rc2fixssl.el7.noarch.rpm && \
     yum clean all
 
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64 && \
