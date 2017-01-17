@@ -6,7 +6,7 @@ make # run stack
 
 docker-compose run --rm web env # copy WEB_PORT
 
-api=WEB_PORT make add-api
+api=WEB_PORT make add-api # replace tcp with http
 
 make test-api
 
