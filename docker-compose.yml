@@ -33,6 +33,7 @@ nginx-lb:
     - 8001
   links:
     - consul:consul
+    - web
   restart: always
   command: >
       /bin/containerpilot
@@ -67,4 +68,16 @@ kong:
   environment:
     - KONG_DATABASE=postgres
     - KONG_PG_HOST=kong-database
-  
+
+# Web
+
+web:
+  build: web/
+  command: make
+  ports:
+    - '5000:80'
+  volumes:
+    - ./web:/opt/project
+  environment:
+    PORT: 80
+    ENV: dev
